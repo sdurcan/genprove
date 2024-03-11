@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { margin: 20px; }
+        .question { margin-bottom: 10px; }
+        .answer { width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question" id="question">Loading question...</div>
+        <textarea class="answer" id="answer" placeholder="Type your answer here..."></textarea>
+        <button onclick="saveAnswer()">Save Answer</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

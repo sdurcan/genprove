@@ -1,0 +1,24 @@
+graph LR
+    style A fill:#add8e6,stroke:#333,stroke-width:4px
+    style B fill:#87CEEB,stroke:#333,stroke-width:2px
+    style C fill:#add8e6,stroke:#333,stroke-width:4px
+    style D fill:#87CEEB,stroke:#333,stroke-width:2px
+    style E fill:#87CEEB,stroke:#333,stroke-width:2px
+    style F fill:#add8e6,stroke:#333,stroke-width:4px
+    style G fill:#87CEEB,stroke:#333,stroke-width:2px
+    style H fill:#87CEEB,stroke:#333,stroke-width:2px
+    style I fill:#add8e6,stroke:#333,stroke-width:4px
+
+    A([User Sign In Screen]) --> B[System: Query Questions]
+    B --> C([Show Question and Edit Response Screen])
+    C --> D[System: Save]
+    D --> E[System: RAGAS Score]
+
+    E -->|Failed| F([User: Collect Missing Content Info])
+    E -->|Passed| G[System: Check if Other Answers]
+
+    F --> G
+    G -->|No| C
+    G -->|Yes| H[System: Combine and Diff Answers]
+    H --> I([Review and Combine with Other Answers Screen])
+    I --> C

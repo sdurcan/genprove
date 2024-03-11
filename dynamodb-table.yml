@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create a DynamoDB table for storing questions and their answers.
+
+Resources:
+  QuestionAnswerTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: QuestionAnswers
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: "question"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "question"
+          KeyType: "HASH"
